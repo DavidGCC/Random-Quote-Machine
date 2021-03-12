@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActions, CardActionArea, CardContent, Button, Typography, CardMedia, Grid, IconButton } from "@material-ui/core";
 import TwitterIcon from '@material-ui/icons/Twitter';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 const useStyles = makeStyles({
     root: {
@@ -40,7 +41,7 @@ const useStyles = makeStyles({
         flexDirection: "column",
         justifyContent: "space-between"
     },
-    tweetQuote: {
+    shareQuote: {
         textDecoration: "none",
         color: "#fff"
     }
@@ -96,14 +97,19 @@ const App = () => {
                 </CardActionArea>
                 <Grid container justify="space-between" style={{ marginBottom: 15, marginTop: 15 }}>
                     <Grid item >
-                        <a id="tweet-quote" className={classes.tweetQuote} target="_blank" href={`https://twitter.com/intent/tweet?text=${quote.text}%0D- ${quote.author}`} title="Tweet This Quote">
-                            <Button color="primary" size="large" variant="contained" style={{ marginLeft: 10 }}>
-                                Share <TwitterIcon />
+                        <a 
+                            id="tweet-quote" 
+                            className={classes.shareQuote} 
+                            target="_blank" 
+                            href={`https://twitter.com/intent/tweet?text=${quote.text}%0D-%20${quote.author}`} 
+                            title="Tweet This Quote">
+                            <Button color="primary" size="medium" variant="contained" style={{ marginLeft: 10 }}>
+                                Tweet <TwitterIcon />
                             </Button>
                         </a>
                     </Grid>
                     <Grid item>
-                        <Button id="new-quote" size="large" variant="contained" style={{ marginRight: 10 }} onClick={() => getNewQuote()}>
+                        <Button id="new-quote" size="medium" variant="contained" style={{ marginRight: 10, backgroundColor: color }} onClick={() => getNewQuote()}>
                             New Quote <NavigateNextIcon />
                         </Button>
                     </Grid>

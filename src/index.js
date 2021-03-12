@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     },
     mediaContainer: {
         width: "100%",
-        height: 250
+        height: 300
     },
     container: {
         display: "flex",

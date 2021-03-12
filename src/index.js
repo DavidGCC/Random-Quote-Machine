@@ -67,7 +67,6 @@ const App = () => {
         axios
             .get(`https://en.wikipedia.org/w/api.php?action=query&titles=${quote.author}&prop=pageimages&piprop=original&origin=*&format=json`)
             .then(response => {
-                console.log(response)
                 const objectKeys = Object.keys(response.data.query.pages);
                 if (response.data.query.pages[objectKeys[0]].original) {
                     setAuthorImage(response.data.query.pages[objectKeys[0]].original);
